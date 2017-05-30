@@ -17,7 +17,23 @@ SELECT
     UPPER(destination), LOWER(destination)
 FROM
     mexico;
-select concat(destination,state_name)as trip
-from mexico;
-select concat(destination,'is in',state_name)as sentence
-from mexico;
+SELECT 
+    CONCAT(destination, state_name) AS trip
+FROM
+    mexico;
+SELECT 
+    CONCAT(destination, 'is in', state_name) AS sentence
+FROM
+    mexico;
+SELECT 
+    destination, CONVERT( fligth_cost , CHAR) AS price
+FROM
+    mexico
+WHERE
+    fligth_cost IS NOT NULL;
+SELECT 
+    destination, CONCAT('$', FORMAT(fligth_cost, 2)) AS price
+FROM
+    mexico
+WHERE
+    fligth_cost IS NOT NULL;
